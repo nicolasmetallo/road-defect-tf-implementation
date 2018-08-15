@@ -1,4 +1,4 @@
-"""Split an image folder into train/dev/test sets and resize.
+"""Split an image folder into train/val/test sets and resize.
 - The images dataset comes in the following format:
     images/
         IMG_00000.jpg
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     filenames = os.listdir(images_dir)
     filenames = [os.path.join(images_dir, f) for f in filenames if f.endswith('.jpg')]
 
-    # Split the images in the 'images' dir into 80% train, 10% dev, and 10% test
+    # Split the images in the 'images' dir into 80% train, 10% val, and 10% test
     # Make sure to always shuffle with a fixed seed so that the split is reproducible
     random.seed(230)
     filenames.sort()
@@ -49,11 +49,11 @@ if __name__ == '__main__':
     split_a = int(0.8 * len(filenames))
     split_b = int(0.9 * len(filenames))
     train_filenames = filenames[:split_a]
-    dev_filenames = filenames[split_a:split_b]
+    val_filenames = filenames[split_a:split_b]
     test_filenames = filenames[split_b:]
 
     filenames = {'train': train_filenames,
-                 'dev': dev_filenames,
+                 'val': val_filenames,
                  'test': test_filenames}
 
     if not os.path.exists(args.output_dir):
@@ -61,8 +61,8 @@ if __name__ == '__main__':
     else:
         print("Warning: output dir {} already exists".format(args.output_dir))
 
-    # Preprocess train, dev and test
-    for split in ['train', 'dev', 'test']:
+    # Preprocess train, val and test
+    for split in ['train', 'val', 'test']:
         output_dir_split = os.path.join(args.output_dir, '{}'.format(split))
         if not os.path.exists(output_dir_split):
             os.mkdir(output_dir_split)
