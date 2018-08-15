@@ -1,0 +1,20 @@
+item {
+  name: "smooth"
+  id: 1
+  display_name: "smooth"
+}
+item {
+  name: "not"
+  id: 2
+  display_name: "not"
+}
+item {
+  name: "shadows"
+  id: 3
+  display_name: "shadows"
+}
+item {
+  name: "street"
+  id: 4
+  display_name: "street"
+}
