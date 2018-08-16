@@ -1,20 +1,20 @@
 item {
-  name: "smooth"
+  name: "pothole"
   id: 1
-  display_name: "smooth"
+  display_name: "pothole"
 }
 item {
-  name: "not"
+  name: "shadow"
   id: 2
-  display_name: "not"
+  display_name: "shadow"
 }
 item {
-  name: "shadows"
+  name: "crack"
   id: 3
-  display_name: "shadows"
+  display_name: "crack"
 }
 item {
-  name: "street"
+  name: "street-marking"
   id: 4
-  display_name: "street"
+  display_name: "street-marking"
 }
